@@ -16,8 +16,8 @@ app.post('/updates',(req,res,next)=>{
     
     var clientupdates = [];
     updates.push(...req.body.clientupdates);
-    updates.slice(req.body.updatedTill);
-    res.send({updates:updates ,updatedTill: updates.length})
+    var tobeupdated = updates.slice(req.body.updatedTill);
+    res.send({updates:tobeupdated ,updatedTill: updates.length})
 })
 
 app.listen(port)

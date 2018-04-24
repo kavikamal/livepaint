@@ -28,7 +28,7 @@ function pollFuncForUpdatePixel(){
             document.body.innerHTML="Oops server is down.Please try again later";
             clearTimeout(fetchTimer);        
         });
-    fetchTimer=setTimeout(pollFuncForUpdatePixel,5000)
+    fetchTimer=setTimeout(pollFuncForUpdatePixel,1000)
 }
 
 function handleErrors(response) {
