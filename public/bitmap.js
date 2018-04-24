@@ -33,8 +33,7 @@ Bitmap.prototype.render = function(target_element) {
 Bitmap.prototype.setColor = function(row, col, color) {
     this.grid[row][col] = color;
     this.cells[row][col].style.background = color;
-    clientupdates.push([row,col,color])
-
+    clientupdates.push([row,col,color]);
 }
 
 Bitmap.prototype.handleEvent = function(event) {
@@ -47,4 +46,5 @@ Bitmap.prototype.handleEvent = function(event) {
             this.fill(row, col, paint_color);
         }
     }
+    
 };

@@ -4,6 +4,9 @@ Bitmap.prototype.fill = function(row, col, new_color) {
     if(old_color === new_color) return;
 
     this.setColor(row, col, new_color);
+    //Added by Kavitha
+    clientupdates.push([row,col,new_color]); 
+
     var queue = [[row, col]];
     while(queue.length > 0) {
         [r,c] = queue.shift();
@@ -13,6 +16,8 @@ Bitmap.prototype.fill = function(row, col, new_color) {
             [n_r, n_c] = neighbors.shift();
             if(this.grid[n_r] && this.grid[n_r][n_c] === old_color) {
                 this.setColor(n_r, n_c, new_color);
+                //Added by Kavitha 
+                clientupdates.push([n_r, n_c, new_color]);
                 queue.push([n_r, n_c]);
             }
         }
