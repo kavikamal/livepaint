@@ -1,3 +1,5 @@
+var clientupdates =[]
+
 function Bitmap(width, height) {
     this.grid = [];
     for(var row = 0; row < height; row++) {
@@ -31,6 +33,8 @@ Bitmap.prototype.render = function(target_element) {
 Bitmap.prototype.setColor = function(row, col, color) {
     this.grid[row][col] = color;
     this.cells[row][col].style.background = color;
+    clientupdates.push([row,col,color])
+
 }
 
 Bitmap.prototype.handleEvent = function(event) {
