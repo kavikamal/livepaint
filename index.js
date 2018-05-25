@@ -5,7 +5,8 @@ const app = express()
 app.use(express.static('public'))
 app.use(express.json())
 
-var updates= []
+let updates= []
+
 
 // Fill in your request handlers here
 app.get('/',(req,res,next)=>{
@@ -13,8 +14,8 @@ app.get('/',(req,res,next)=>{
 })
 
 app.post('/updates',(req,res,next)=>{
-    
     var clientupdates = [];
+    
     updates.push(...req.body.clientupdates);
     var tobeupdated = updates.slice(req.body.updatedTill);
     res.send({updates:tobeupdated ,updatedTill: updates.length})

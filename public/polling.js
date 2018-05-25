@@ -9,7 +9,7 @@ function pollFuncForUpdatePixel(){
         headers: {
         "Content-Type": "application/json",
         },
-        body: JSON.stringify({clientupdates: clientupdates, updatedTill:0}),
+        body: JSON.stringify({clientupdates, updatedTill}),
     }
     fetch("/updates", postRequestOptions)
         .then(handleErrors => handleErrors.json())
